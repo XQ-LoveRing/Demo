@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title></title>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_d55q4geagfzuxr.css">
     <style type="text/css">
         * {
             margin: 0;
@@ -152,27 +153,7 @@
         .act .work-items p {
             margin-bottom: 10px;
         }
-
-
-        .icon-add{
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border: 1px solid #000;
-            border-radius: 50%;
-            position: absolute;
-            left:-67.5px;
-            top:0px;
-        }
-
-        .icon-add:before{
-            content: '+';
-            position: absolute;
-            left: 3.5px;
-            top: -6.5px;
-            font-size:20px;
-        }
-
+        
         .skill{
             float:right;
         }
@@ -190,25 +171,33 @@
             margin-bottom:40px;
         }
 
-        .skill li:after{
-            content: "";
-            position: absolute;
-            left:0;
-            top:0;
-            display: inline-block;
-            width: 18px;
-            height: 18px;
-            border: 1px solid #000;
-            border-radius: 50%;
+        /*.skill li:before{*/
+            /*content: "";*/
+            /*position: absolute;*/
+            /*left:0;*/
+            /*top:0;*/
+            /*display: inline-block;*/
+            /*width: 18px;*/
+            /*height: 18px;*/
+            /*border: 1px solid #000;*/
+            /*border-radius: 50%;*/
+
+        /*}*/
+
+        /*.skill li:after{*/
+            /*content: '+';*/
+            /*position: absolute;*/
+            /*left: -54.5px;*/
+            /*top: -2px;*/
+            /*!*font-size:20px;*!*/
+        /*}*/
+        .iconfont{
+            position:absolute;
+            top:3px;
+            left:-60px;
         }
 
-        .skill li:before{
-            content: '+';
-            position: absolute;
-            left: -56px;
-            top: -6px;
-            font-size:20px;
-        }
+
 
 
 
@@ -310,12 +299,12 @@
         <hr>
         <div class="content">
             <ul class="clearfix">
-                <li>HTML&CSS</li>
-                <li>jQuery</li>
-                <li>JavaScript</li>
-                <li>Gulp</li>
-                <li>Node</li>
-                <li>Vue.js</li>
+                <li> <i class="iconfont icon-add"> </i>HTML&CSS</li>
+                <li> <i class="iconfont icon-add"> </i>jQuery</li>
+                <li> <i class="iconfont icon-add"> </i>JavaScript</li>
+                <li> <i class="iconfont icon-add"> </i>Gulp</li>
+                <li> <i class="iconfont icon-add"> </i>Node</li>
+                <li> <i class="iconfont icon-add"> </i>Vue.js</li>
             </ul>
         </div>
     </div>
@@ -324,14 +313,14 @@
         <hr>
         <div class="content">
             <div class="work-items">
-                <span class="icon-add"></span>
+                <i class="iconfont icon-add"> </i>
                 <h5>Volunteer</h5>
                 <p>
                     Claritas eat eitam processus dynamicus,qui sequitur mutationem consutudium lectorum.
                 </p>
             </div>
             <div class="work-items">
-                <span class="icon-add"></span>
+                <i class="iconfont icon-add"> </i>
                 <h5>Volunteer</h5>
                 <p>
                     Claritas eat eitam processus dynamicus,qui sequitur mutationem consutudium lectorum.
