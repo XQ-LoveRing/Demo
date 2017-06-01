@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-weight: 300;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .layout {
+            width: 800px;
+            margin: 40px auto;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /* 自我介绍  :头像 名字  姓名  联系方式  */
+
+        .intro .photo {
+            box-sizing: border-box;
+        }
+
+        .photo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+        }
+
+        .intro .des {
+            /*height: 150px;*/
+            margin-left: 40px;
+            margin-top: 40px;
+        }
+
+        .contact {
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .contact h3 {
+            border-bottom: 3px solid black;
+        }
+
+        .contact ul {
+            margin-top: 5px;
+        }
+
+        .contact li {
+            line-height: 150%;
+        }
+
+        .contact li:first-letter {
+            font-weight: 600;
+        }
+
+        h4 {
+            padding-bottom: 5px;
+        }
+
+        hr {
+            width: 360px;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 0;
+        }
+
+        .work-exp .content {
+            margin-top: 20px;
+            border-left: 1px solid #000;
+            padding-left: 60px;
+        }
+
+        .work-items {
+            position: relative;
+        }
+
+        .work-exp .work-items h5 {
+            margin-bottom: 10px;
+        }
+
+        .work-exp .work-items p {
+            margin-bottom: 10px;
+        }
+
+        .grey {
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .circle {
+            position: absolute;
+            left: -67.5px;
+            top: 0;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 7px;
+            background-color: #000;
+
+        }
+
+        .edu .content {
+            margin-top: 20px;
+            border-left: 1px solid #000;
+            padding-left: 60px;
+        }
+
+        .edu .major {
+            display: inline-block;
+            font-size: 0.83em;
+            margin-bottom: 10px;
+        }
+
+        .edu .work-items {
+            margin-bottom: 10px;
+        }
+
+        .act {
+            width: 360px;
+        }
+
+        .act .content {
+            margin-top: 20px;
+            padding-left: 60px;
+        }
+
+        .act .work-items h5 {
+            margin-bottom: 10px;
+        }
+
+        .act .work-items p {
+            margin-bottom: 10px;
+        }
+
+
+        .icon-add{
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            position: absolute;
+            left:-67.5px;
+            top:0px;
+        }
+
+        .icon-add:before{
+            content: '+';
+            position: absolute;
+            left: 3.5px;
+            top: -6.5px;
+            font-size:20px;
+        }
+
+        .skill{
+            float:right;
+        }
+        .skill .content{
+            width: 360px;
+            margin-top:20px;
+        }
+
+
+        .skill li {
+            position: relative;
+            float:left;
+            width: 50%;
+            text-indent:60px;
+            margin-bottom:40px;
+        }
+
+        .skill li:after{
+            content: "";
+            position: absolute;
+            left:0;
+            top:0;
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid #000;
+            border-radius: 50%;
+        }
+
+        .skill li:before{
+            content: '+';
+            position: absolute;
+            left: -56px;
+            top: -6px;
+            font-size:20px;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="intro layout  clearfix">
+    <div class="photo-des">
+        <div class="photo fl">
+            <img src="http://img1.gtimg.com/sports/pics/hv1/252/4/1958/127320222.jpg" alt=""/>
+        </div>
+        <div class="des fl">
+            <h1>LoveRing</h1>
+            <p class="post">Graphic&web Designer</p>
+        </div>
+    </div>
+
+    <div class="contact fr">
+        <h3>CONTACTS</h3>
+        <ul>
+            <li>A 福建福州</li>
+            <li>N 150xxxxxxxx</li>
+            <li>E 291xxxx@qq.com</li>
+            <li>B www.XXXXXX.com</li>
+        </ul>
+    </div>
+</div>
+
+<div class="work-exp layout">
+    <h4>WORK EXPERIENCE</h4>
+    <hr>
+    <div class="content">
+        <div class="work-items">
+            <h5>Marketplacrs / <span class="grey">2013-2014</span></h5>
+            <p>
+                You prefer not to share your deep rooted feelings with others – perhaps you are scared of putting
+                yourself in a position of vulnerability. You hide your feelings in order to appear more confident and
+                successful. This type of behavior hinders falling in love. When you cannot share your true self with
+                another, the sacred place of deep intimacy, trust and sharing cannot be accessed.
+            </p>
+            <span class="circle"></span>
+        </div>
+        <div class="work-items">
+            <h5>Marketplacrs / <span class="grey">2013-2014</span></h5>
+            <p>
+                You prefer not to share your deep rooted feelings with others – perhaps you are scared of putting
+                yourself in a position of vulnerability. You hide your feelings in order to appear more confident and
+                successful. This type of behavior hinders falling in love. When you cannot share your true self with
+                another, the sacred place of deep intimacy, trust and sharing cannot be accessed.
+            </p>
+            <span class="circle"></span>
+        </div>
+        <div class="work-items">
+            <h5>Marketplacrs / <span class="grey">2013-2014</span></h5>
+            <p>
+                You prefer not to share your deep rooted feelings with others – perhaps you are scared of putting
+                yourself in a position of vulnerability. You hide your feelings in order to appear more confident and
+                successful. This type of behavior hinders falling in love. When you cannot share your true self with
+                another, the sacred place of deep intimacy, trust and sharing cannot be accessed.
+            </p>
+            <span class="circle"></span>
+        </div>
+    </div>
+
+</div>
+<div class="edu layout">
+    <h4>EDUCATION</h4>
+    <hr>
+    <div class="content">
+        <div class="work-items">
+            <h5>Marketplacrs / <span class="grey">2013-2014</span></h5>
+            <span class="major grey">Network Engineering</span>
+            <p>
+                You prefer not to share your deep rooted feelings with others – perhaps you are scared of putting
+                yourself in a position of vulnerability. You hide your feelings in order to appear more confident and
+                successful. This type of behavior hinders falling in love. When you cannot share your true self with
+                another, the sacred place of deep intimacy, trust and sharing cannot be accessed.
+            </p>
+            <span class="circle"></span>
+        </div>
+        <div class="work-items">
+            <h5>Marketplacrs / <span class="grey">2013-2014</span></h5>
+            <span class="major grey">Network Engineering</span>
+            <p>
+                You prefer not to share your deep rooted feelings with others – perhaps you are scared of putting
+                yourself in a position of vulnerability. You hide your feelings in order to appear more confident and
+                successful. This type of behavior hinders falling in love. When you cannot share your true self with
+                another, the sacred place of deep intimacy, trust and sharing cannot be accessed.
+            </p>
+            <span class="circle"></span>
+        </div>
+    </div>
+</div>
+<div class="act-skill layout clearfix">
+    <div class="skill ">
+        <h4>PROFESIONAL SKILLS</h4>
+        <hr>
+        <div class="content">
+            <ul class="clearfix">
+                <li>HTML&CSS</li>
+                <li>jQuery</li>
+                <li>JavaScript</li>
+                <li>Gulp</li>
+                <li>Node</li>
+                <li>Vue.js</li>
+            </ul>
+        </div>
+    </div>
+    <div class="act">
+        <h4>EXTR CURRICULAR ACTIVITIS</h4>
+        <hr>
+        <div class="content">
+            <div class="work-items">
+                <span class="icon-add"></span>
+                <h5>Volunteer</h5>
+                <p>
+                    Claritas eat eitam processus dynamicus,qui sequitur mutationem consutudium lectorum.
+                </p>
+            </div>
+            <div class="work-items">
+                <span class="icon-add"></span>
+                <h5>Volunteer</h5>
+                <p>
+                    Claritas eat eitam processus dynamicus,qui sequitur mutationem consutudium lectorum.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
