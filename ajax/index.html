@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>
+        加载更多
+    </title>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0
+        }
+
+        #list li {
+            list-style: none;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #load-more {
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+            cursor: pointer;
+        }
+
+
+        .btn {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            width: 80px;
+            border: 1px solid #E27272;
+            border-radius: 3px;
+            text-align: center;
+            text-decoration: none;
+            color: #E27272;
+        }
+
+        .btn:hover {
+            background: green;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+</ul>
+<a id="load-more" class="btn" href="#">
+    加载更多
+</a>
+</body>
+
+<script>
+    var list = document.querySelector('#list');
+    var btn = document.querySelector('#load-more');
+
+    var curIndex = 0;  //当前要加载的数据的序号
+    var len = 5;   // 每次加载多少个数据
+    var isDataArrive = true;  //状态锁，用于判断是否在加载数据
+
+    btn.addEventListener('click', function (e) {
+        e.preventDefault();  //取消超链接的默认事件，防止点击 a 链接页面跳到顶部
+
+        if (!isDataArrive) {
+            return;   //如果请求发送了而数据没返回，则这次点击不执行下列代码
+        }
+
+        //如果不是正在返回数据，则执行下面代码
+        ajax(
+                '/loadMore',
+                {
+                    idx: curIndex,
+                    len: len
+                });
+
+        isDataArrive = false;
+
+    });
+
+
+    function ajax(url, json) {  //封装Ajax代码
+        var xhr = new XMLHttpRequest();
+        var arr = [];
+        for (key in json) {
+            arr.push(key + '=' + json[key]);
+        }
+        url += '?' + arr.join('&');
+        xhr.open('get', url,true);
+        xhr.send();
+
+        xhr.onload = function () {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                onSuccess(JSON.parse(this.responseText))
+            } else {
+                onError()
+            }
+        }
+    }
+    function appendData(data) {//封装加载更多项的函数
+        for (var i = 0; i < data.length; i++) {
+            var child = document.createElement('li');
+            child.innerText = data[i];
+            list.appendChild(child)
+        }
+    }
+
+    function onSuccess(data) {
+        appendData(data);    //执行封装的appendData函数，在页面中加载项
+        isDataArrive = true;   //数据顺利到来后解除状态锁
+        curIndex = curIndex + len;  //修改序号，下次要数据就从新序号开始要
+    }
+
+    function onError(){
+        console.log('出错了');
+    }
+
+
+    var btn = document.querySelector('#load-more');
+    var ct = document.querySelector('#ct');
+    var pageindex = 0;
+    var isDataArrive = true;
+
+
+    //服务器端
+/*    app.get('/loadMore',function (req,res) {
+        var idx=req.query.idx;
+        var len=req.query.len;
+        var date=[];
+
+        for(var i=0;i<len;i++){
+            date.push('新闻'+(parseInt(idx)+i))
+        }
+        res.send(date)
+        /!* setTimeout(function () {
+         res.send(date)
+         },2000);*!/
+    })*/
+
+
+
+    /*   未封装
+     btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (!isDataArrive) {
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status == 304) {
+                        var results = JSON.parse(xhr.responseText);
+                        console.log(results)
+                        var fragment = document.createDocumentFragment();
+                        for (var i = 0; i < results.length; i++) {
+                            var node = document.createElement('li');
+                            node.innerText = results[i];
+                            fragment.appendChild(node);
+                        }
+                        ct.appendChild(fragment);
+                        pageindex = pageindex + 5;
+                    } else {
+                        console.log('出错了')
+                    }
+                    isDataArrive = true;
+                }
+            }
+            xhr.open('get', '/loadMore?index=' + pageindex + '&length=5', true);
+            xhr.send();
+            isDataArrive = false;
+
+        });*/
+</script>
+</html>
