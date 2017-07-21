@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .show-jew{
+            width: 980px;
+            margin:0 auto;
+        }
+
+        .show-name{
+            margin-left:80px;
+            color:#666;
+        }
+
+        .jew-container:after{
+            content:'';
+            display: block;
+            clear:both;
+        }
+
+
+        .jew-container li {
+            float: left;
+            width: 25%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+
+
+        .jew-item .jew-name {
+            font-size: 14px;
+            color:#000;
+        }
+
+        .jew-item .jew-price {
+            color: red;
+            font-size: 14px;
+        }
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        .cover .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #c81623;
+            color: #c81623;
+            padding: 10px 15px;
+            border-radius: 3px;
+            text-align: center;
+            background: #fff;
+            cursor: pointer;
+        }
+        .hover{
+            opacity:1;
+        }
+
+        .btn-add{
+
+            border:1px solid #c81623;
+            color: #c81623;
+            padding: 10px 15px;
+            background: #fff;
+            cursor: pointer;
+            margin-left: 80px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class='show-jew'>
+        <h2 class="show-name">珠宝首饰</h2>
+        <ul class="jew-container">
+            <li class="jew-item">
+                <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                <a>
+                    <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                         alt="">
+                    <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                    <div class="jew-price">￥1699.00</div>
+                </a>
+            </li>
+            <li class="jew-item">
+                <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                <a>
+                    <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                         alt="">
+                    <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                    <div class="jew-price">￥1699.00</div>
+                </a>
+            </li>
+            <li class="jew-item">
+                <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                <a>
+                    <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                         alt="">
+                    <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                    <div class="jew-price">￥1699.00</div>
+                </a>
+            </li>
+            <li class="jew-item">
+                <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                <a>
+                    <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                         alt="">
+                    <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                    <div class="jew-price">￥1699.00</div>
+                </a>
+            </li>
+            <li class="jew-item">
+                <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                <a>
+                    <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                         alt="">
+                    <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                    <div class="jew-price">￥1699.00</div>
+                </a>
+            </li>
+            <li class="jew-item">
+                <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                <a>
+                    <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                         alt="">
+                    <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                    <div class="jew-price">￥1699.00</div>
+                </a>
+            </li>
+
+        </ul>
+        <a class="btn-add" href="javascript:void(0)">添加</a>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+    <script>
+
+        var products = [
+            {
+                img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+                name: '珂兰 黄金手 猴哥款',
+                price: '￥405.00'
+            },{
+                img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+                name: '珂兰 黄金转运珠 猴哥款',
+                price: '￥100.00'
+            },{
+                img: 'http://img10.360buyimg.com/N3/jfs/t2242/92/1446546284/374195/9196ac66/56af0958N1a723458.jpg',
+                name: '珂兰 黄金手链 3D猴哥款',
+                price: '￥45.00'
+            }
+        ];
+
+//        function getInfo(products) {
+//            for(var i=0;i<products.length;i++){
+//                var img=products[i].img;
+//                var name=products[i].name;
+//                var price=products[i].price;
+////                console.log(img,name,price)
+//            }
+//        }
+
+//        getInfo(products);
+
+        $('.btn-add').on('click',function () {
+            var name = "abc";
+            var price = "1000";
+            for (var i = 0; i < products.length; i++) {
+                var img = products[i].img;
+                var name = products[i].name;
+                var price = products[i].price;
+                $('.jew-container').append(
+                    '<li class="jew-item">' +
+                    '<div class="cover"><a class="btn">立即抢购</a></div>' +
+                    '<a href="">' +
+                    '<img src="'+img+'" alt="">' +
+                    '<div class="jew-name">' + name + '</div>' +
+                    '<div class="jew-price">' + price + '</div>' +
+                    '</a>' +
+                    ' </li>');
+
+            }
+        });
+
+//        $('.jew-item').on('mouseenter',function () {
+//            $(this).find('.cover').addClass('hover');
+//        })
+//        $('.jew-item').on('mouseleave',function () {
+//            $(this).find('.cover').removeClass('hover');
+//        })
+//由于节点是动态生成的所以 需要采用事件代理
+        $('.show-jew').on('mouseenter','.cover',function (e) {
+            $(this).addClass('hover');
+        })
+        $('.show-jew').on('mouseleave','.cover',function (e) {
+            $(this).removeClass('hover');
+        })
+    </script>
+</body>
+</html>

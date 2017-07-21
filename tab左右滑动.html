@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="tab切换 原生js" />
+    <meta charset="utf-8">
+    <title>tab 切换</title>
+    <style>
+
+        .mod-tab {
+            border: 1px solid #ccc;
+            margin-top: 30px;
+            width: 900px;
+            overflow: hidden;
+        }
+        .mod-tab * {
+            box-sizing: border-box;
+        }
+        .mod-tab ul,
+        .mod-tab li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .mod-tab .tabs:after {
+            content: '';
+            height: 0;
+            display: table;
+            clear: both;
+        }
+        .mod-tab .tabs li {
+            float: left;
+            width: 33.3%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        .mod-tab .tabs li:last-child {
+            border-right: none;
+        }
+        .mod-tab .tabs .active {
+            background: #eee;
+        }
+        .mod-tab .wrap {
+            position: relative;
+            height: 180px;
+            width: 2700px;
+
+        }
+        .mod-tab .panels {
+            position: absolute;
+
+        }
+        .mod-tab .panels>li {
+            height: 180px;
+            width: 900px;
+            padding: 20px;
+            float:left;
+        }
+        .mod-tab .panels>li:nth-child(1) {
+            background-color: red;
+            /*margin-left:-900px;*/
+        }
+        .mod-tab .panels>li:nth-child(2) {
+            background-color: green;
+        }
+        .mod-tab .panels>li:nth-child(3) {
+            background-color: blue;
+        }
+        .mod-tab .active {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mod-tab">
+    <ul class="tabs">
+        <li class="active">tab1</li>
+        <li>tab2</li>
+        <li>tab3</li>
+    </ul>
+    <div class="wrap" >
+        <ul class="panels">
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+        </ul>
+    </div>
+
+</div>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+
+    $('.tabs>li').on('click',function () {
+        var $this=$(this);
+        var index=$this.index();
+        var padding=parseInt($('.mod-tab .panels>li').css("padding"));
+        console.log( padding);
+        var panelWidth=$('.mod-tab .panels>li').width()+padding*2;
+        console.log(panelWidth);
+        $this.addClass('active').siblings().removeClass('active');
+        $this.parents('.mod-tab').find('.panels')
+            .animate({left: -panelWidth*index})
+    });
+
+
+
+    // $('.tabs li').on('click', function(){
+    //    var $cur = $(this);
+    //    var idx = $cur.index();
+    //    $cur.siblings().removeClass('active');
+    //    $cur.addClass('active');
+
+    //    $cur.parents('.mod-tab').find('.panel').removeClass('active');
+    //    $cur.parents('.mod-tab').find('.panel').eq(idx)
+    //               .addClass('active');
+    // });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #tab {
+            width: 900px;
+            margin: 0 auto;
+            border: 1px solid;
+            border-radius: 5px;
+            padding: 20px 20px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tab-header {
+            margin-bottom: 20px;
+            border-bottom: 1px solid;
+        }
+
+        .tab-header:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .tab-header > li {
+            float: left;
+            width: 15%;
+            padding: 5px 0;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            border-top: 1px solid #fff;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
+
+        .tab-header > .active {
+            border: 1px solid;
+            border-bottom-color: #fff;
+            margin-bottom: -1px;
+        }
+
+        .tab-Panel > li {
+            display: none;
+        }
+
+        .tab-Panel > .active {
+            display: block;
+        }
+
+        .jew-container:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .jew-container li {
+            float: left;
+            width: 25%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+
+
+        .jew-item .jew-name {
+            font-size: 14px;
+        }
+
+        .jew-item .jew-price {
+            color: red;
+            font-size: 14px;
+        }
+
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            opacity: 0;
+        }
+
+        .cover .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #c81623;
+            color: #c81623;
+            padding: 10px 15px;
+            border-radius: 3px;
+            text-align: center;
+            background: #fff;
+            cursor: pointer;
+        }
+        .hover{
+            opacity:1;
+        }
+    </style>
+</head>
+<body>
+
+<div id='tab'>
+    <ul class='tab-header'>
+        <li class="active">热门</li>
+        <li>珠宝首饰</li>
+        <li>奢侈品</li>
+    </ul>
+    <ul class='tab-Panel'>
+        <li class="jew-panel active">
+            <ul class="jew-container">
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="jew-panel">
+            <ul class="jew-container">
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img12.360buyimg.com/N3/jfs/t2302/181/1562193880/220016/88a978ef/56cbbc11Nd6d3b04b.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="jew-panel">
+            <ul class="jew-container">
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img13.360buyimg.com/N3/jfs/t2461/336/2166939566/101221/3af27699/56c426a5N9b6673f4.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+                <li class="jew-item">
+                    <div class="cover"><a class="btn" href="">立即抢购</a></div>
+                    <a>
+                        <img src="http://img10.360buyimg.com/N3/jfs/t1360/330/897475737/123557/23624706/55b05e25N13d4ec5e.jpg"
+                             alt="">
+                        <div class="jew-name">藏美千足金和田玉金镶玉路路通吊坠</div>
+                        <div class="jew-price">￥1699.00</div>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+    </ul>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+<script>
+//    var tabHeader = document.querySelector('.tab-header');
+//    var tabs = document.querySelectorAll('.tab-header>li');
+//    var tabPanel = document.querySelectorAll('.tab-Panel>li');
+//    tabHeader.addEventListener('click', function (e) {
+//        var target = e.target;
+//        for (var i = 0; i < tabs.length; i++) {
+//            tabs[i].classList.remove('active');
+//        }
+//        target.classList.add('active');
+//        var index = [].indexOf.call(tabs, target);
+//        for (var i = 0; i < tabPanel.length; i++) {
+//            tabPanel[i].classList.remove('active');
+//        }
+//        tabPanel[index].classList.add('active');
+//    }, false);
+
+$('.tab-header>li').on('click',function (e) {
+    var $cur=$(this);
+    var index=$cur.index();
+
+    console.log(index)
+    $cur.siblings().removeClass('active');
+    $cur.addClass('active');
+
+    $cur.parents('#tab').find('.jew-panel').removeClass('active');
+    $cur.parents('#tab').find('.jew-panel').eq(index).addClass('active');
+
+})
+
+
+$('.jew-item').on('mouseenter',function () {
+    $(this).find('.cover').addClass('hover');
+})
+$('.jew-item').on('mouseleave',function () {
+    $(this).find('.cover').removeClass('hover');
+})
+</script>
+</body>
+</html>

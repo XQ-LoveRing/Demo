@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        div{
+
+        }
+        ul,li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-aside{
+            width: 200px;
+            list-style: none;
+            padding: 0 10px ;
+            background-color: #c7171e;
+        }
+
+        .nav-aside .category{
+            position: relative;
+            font-size:14px;
+            padding: 10px;
+            border-bottom:dotted #ccc 1px;
+            cursor:pointer;
+
+        }
+
+        .category .cate-title{
+            color:#fff;
+        }
+
+        .category:last-of-type{
+            border: none;
+        }
+
+        .icon-goto{
+            color:#fff;
+            float:right;
+        }
+        .child-panel{
+            position:absolute;
+            top:0;
+            left: 210px;
+            width: 200px;
+            color:#000;
+            border: 1px solid #ccc;
+            font-size: 12px;
+            display: none;
+        }
+
+        .child-panel li {
+            width: 55px;
+            float: left;
+            padding: 10px 20px;
+        }
+
+
+
+
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+</head>
+<body>
+
+<div>
+    <ul class="nav-aside">
+        <li class="category">
+            <a class="cate-title" href="#">珠宝玉器</a>
+            <span class="icon-goto"> > </span>
+            <ul class="child-panel">
+                <li><a href="">翡翠</a></li>
+                <li><a href="">玉石</a></li>
+                <li><a href="">宝石</a></li>
+                <li><a href="">水晶</a></li>
+                <li><a href="">玛瑙</a></li>
+                <li><a href="">珍珠</a></li>
+                <li><a href="">钻石</a></li>
+                <li><a href="">琥珀</a></li>
+                <li><a href="">和田</a></li>
+                <li><a href="">琥珀</a></li>
+            </ul>
+        </li>
+
+        <li class="category">
+            <a class="cate-title" href="#">珠宝玉器</a>
+            <span class="icon-goto"> > </span>
+            <ul class="child-panel">
+                <li><a href="">翡翠</a></li>
+                <li><a href="">玉石</a></li>
+                <li><a href="">宝石</a></li>
+                <li><a href="">水晶</a></li>
+                <li><a href="">玛瑙</a></li>
+                <li><a href="">珍珠</a></li>
+            </ul>
+        </li>
+
+        <li class="category">
+            <a class="cate-title" href="#">珠宝玉器</a>
+            <span class="icon-goto"> > </span>
+            <ul class="child-panel">
+                <li><a href="">翡翠</a></li>
+                <li><a href="">玉石</a></li>
+                <li><a href="">宝石</a></li>
+                <li><a href="">水晶</a></li>
+            </ul>
+        </li>
+
+        <li class="category">
+            <a class="cate-title" href="#">珠宝玉器</a>
+            <span class="icon-goto"> > </span>
+            <ul class="child-panel">
+                <li><a href="">翡翠</a></li>
+                <li><a href="">玉石</a></li>
+                <li><a href="">宝石</a></li>
+                <li><a href="">水晶</a></li>
+                <li><a href="">玛瑙</a></li>
+                <li><a href="">珍珠</a></li>
+            </ul>
+        </li>
+
+        <li class="category">
+            <a class="cate-title" href="#">珠宝玉器</a>
+            <span class="icon-goto"> > </span>
+            <ul class="child-panel">
+                <li><a href="">翡翠</a></li>
+                <li><a href="">玉石</a></li>
+                <li><a href="">宝石</a></li>
+                <li><a href="">水晶</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+
+<script>
+    $('.category').on('mouseenter',function () {
+        $(this).find('.child-panel').show();
+    })
+
+    $('.category').on('mouseleave',function () {
+        $(this).find('.child-panel').hide();
+    })
+
+    
+</script>
+
+</body>
+</html>
