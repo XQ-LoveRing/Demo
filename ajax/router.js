@@ -1,6 +1,6 @@
 //服务器端
 app.get('/loadMore',function (req,res) {
-    var idx=req.query.idx;
+    var idx=req.query.start;
     var len=req.query.len;
     var date=[];
 

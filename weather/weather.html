@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天气</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="weather-main">
+    <div class="weather-today clearfix">
+        <div class="top-show ">
+            <span class="address">北京</span>
+            <span class="timeTemp">周二 08月01日 (实时：32℃)</span>
+        </div>
+
+        <div class="weather-ditail">
+            <div class="des">
+                <ul class="des-pannel">
+                    <li class="active">
+                        <span>穿衣指数:</span>
+                        <p class="cloth_des">
+                            天气热，建议着短裙、短裤、短薄外套、T恤等夏季服装。
+                        </p>
+                    </li>
+                    <li >
+                        <span>洗车指数:</span>
+                        <p class="car_des">
+                            不宜洗车，未来24小时内有雨，如果在此期间洗车，雨水和路上的泥水可能会再次弄脏您的爱车。
+                        </p>
+                    </li>
+                    <li>
+                        <span>感冒指数:</span>
+                        <p class="cold_des">
+                            各项气象条件适宜，发生感冒机率较低。但请避免长期处于空调房间中，以防感冒。
+                        </p>
+                    </li>
+                    <li>
+                        <span>运动指数:</span>
+                        <p class="sport_des">
+                            有降水，推荐您在室内进行低强度运动；若坚持户外运动，须注意选择避雨防滑并携带雨具。
+                        </p>
+                    </li>
+                    <li>
+                        <span>紫外线强度指数:</span>
+                        <p class="ray_des">
+                            属中等强度紫外线辐射天气，外出时建议涂擦SPF高于15、PA+的防晒护肤品，戴帽子、太阳镜。
+                        </p>
+                    </li>
+                </ul>
+
+
+            </div>
+            <ul class="weather-level">
+                <li>
+                    <a class="cloth btn ">穿衣</a>
+                    <span class="level">热</span>
+                </li>
+                <li>
+                    <a class=" car btn">洗车</a>
+                    <span class="level">不宜</span>
+                </li>
+                <li>
+                    <a class="cold btn">感冒</a>
+                    <span class="level">少发</span>
+                </li>
+                <li>
+                    <a class="sport btn">运动</a>
+                    <span class="level">较不宜</span>
+                </li>
+                <li>
+                    <a class="ray btn">紫外线强度</a>
+                    <span class="level">中等</span>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="main-show ">
+            <div class="show-weather">
+                <p class="today-weather">阵雨转雷阵雨</p>
+                <img class="today_pic" src="https://api.map.baidu.com/images/weather/day/zhenyu.png" alt="">
+                <img class="night_pic" src="https://api.map.baidu.com/images/weather/night/leizhenyu.png" alt="">
+                <span class="pm">pm2.5:30</span>
+            </div>
+            <div class="show-tem">32 ~ 24℃</div>
+            <div class="show-wind">东南风微风</div>
+            <input type="text" placeholder="查询地址"> <a class="search" href="#">查询</a>
+        </div>
+
+
+    </div>
+    <div class="foracast clearfix">
+        <ul class="tabs">
+            <li>
+                <p>周三</p>
+                <div class="detail">
+                    <p>阵雨转雷阵雨</p>
+                    <img class="fora_pic" src="https://api.map.baidu.com/images/weather/day/zhenyu.png" alt="">
+                    <img class="fora_np" src="https://api.map.baidu.com/images/weather/night/leizhenyu.png" alt="">
+                </div>
+                <div class="fora_tmp">32 ~ 24℃</div>
+                <div class="fora_wind">东南风微风</div>
+            </li>
+            <li>
+                <p>周四</p>
+                <div class="detail">
+                    <p>阵雨转雷阵雨</p>
+                    <img  class="fora_pic" src="https://api.map.baidu.com/images/weather/day/zhenyu.png" alt="">
+                    <img  class="fora_np" src="https://api.map.baidu.com/images/weather/night/leizhenyu.png" alt="">
+                </div>
+                <div class="fora_tmp">32 ~ 24℃</div>
+                <div class="fora_wind">东南风微风</div>
+            </li>
+
+            <li>
+                <p>周五</p>
+                <div class="detail">
+                    <p>阵雨转雷阵雨</p>
+                    <img  class="fora_pic" src="https://api.map.baidu.com/images/weather/day/zhenyu.png" alt="">
+                    <img  class="fora_np" src="https://api.map.baidu.com/images/weather/night/leizhenyu.png" alt="">
+                </div>
+                <div class="fora_tmp">32 ~ 24℃</div>
+                <div class="fora_wind">东南风微风</div>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+//    var address;
+    var $address=$('.address');
+    var $time=$('.timeTemp');
+    var $pm=$('.pm');
+    var $today=$('.today-weather');
+    var $today_tmp=$('.show-tem');
+    var $today_wind=$('.show-wind');
+    var $today_pic=$('.today_pic');
+    var $night_pic=$('.night_pic');
+
+
+    var $level=$('.weather-level .level');
+    var $des=$('.weather-ditail p');
+
+
+    var $weak=$('.tabs>li>p');
+    var $weather=$('.tabs .detail>p');
+    var $fora_pic=$('.tabs .fora_pic');
+    var $fora_np=$('.tabs .fora_np');
+    var $fora_tmp=$('.tabs .fora_tmp');
+    var $fora_wind=$('.tabs .fora_wind');
+
+
+
+
+    $('.weather-level>li').on('click',function () {
+        var index=$(this).index();
+        $(this).parents('.weather-ditail').find('.des-pannel>li').eq(index).siblings().removeClass('active');
+        $(this).parents('.weather-ditail').find('.des-pannel>li').eq(index).addClass('active');
+
+    });
+
+    $('.search').on('click',function () {
+        var currentCity=$('input').val();
+        $.ajax({
+            url:'http://api.jirengu.com/weather.php?city='+currentCity,
+            type:'GET'
+        }).done(function (ret) {
+//            console.log(ret);
+            var data=JSON.parse(ret);
+            console.log(data);
+            if(data.error!=0){
+                alert('获取天气失败');
+            }
+
+
+            var weather=data.results[0];
+
+            //mian-show and top-show
+            $address.text(weather.currentCity);
+            $time.text(weather.weather_data[0].date);
+            $pm.text('PM2.5: '+weather.pm25);
+            $today.text(weather.weather_data[0].weather);
+            $today_tmp.text(weather.weather_data[0].temperature);
+            $today_wind.text(weather.weather_data[0].wind);
+            $today_pic.attr('src',weather.weather_data[0].dayPictureUrl);
+            $night_pic.attr('src',weather.weather_data[0].nightPictureUrl);
+
+            //weather-level and weather-des
+            var index=weather.index.length;
+
+            for(var i=0;i<index;i++){
+                $level.eq(i).text(weather.index[i].zs);
+                $des.eq(i).text(weather.index[i].des);
+            }
+
+            var fora_index=weather.weather_data.length;
+
+            for(var i=1;i<index-1;i++){
+                $weak.eq(i-1).text(weather.weather_data[i].date);
+                $weather.eq(i-1).text(weather.weather_data[i].weather);
+                $fora_pic.eq(i-1).attr('src',weather.weather_data[i].dayPictureUrl);
+                $fora_np.eq(i-1).attr('src',weather.weather_data[i].nightPictureUrl);
+                $fora_tmp.eq(i-1).text(weather.weather_data[i].temperature);
+                $fora_wind.eq(i-1).text(weather.weather_data[i].wind);
+
+
+
+            }
+
+
+
+
+
+
+            console.log(weather);
+            console.log(weather.weather_data[0].date);
+        });
+    });
+
+//    console.log(address);
+//    $.ajax({
+//           url:'https://api.jirengu.com/weather.php?city=北京',
+//            type:'GET'
+//        }).done(function (ret) {
+//            var weather=JSON.parse(ret);
+//            console.log(weather);
+//            console.log(weather.results[0].currentCity)
+//        });
+
+
+    //console.log(a)
+
+    //  $.ajax({
+    //      url:'//jirenguapi.applinzi.com/weather.php'+'',
+    //  })
+    //console.log(address)
+
+
+    //    var xhr=new XMLhttpsRequest();
+    //    xhr.open('get','https://jirenguapi.applinzi.com/city.php',true);
+    //    xhr.send();
+    //    xhr.onreadystatechange=function () {
+    //        if(xhr.readyState===4&&xhr.status===200){
+    //            console.log(typeof xhr.responseText)
+    //        }
+    //    }
+
+
+</script>
+</body>
+</html>
