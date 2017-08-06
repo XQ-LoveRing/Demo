@@ -1,0 +1,171 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>焦点轮播图</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    ul,li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      display: block;
+    }
+
+    /*焦点广告*/
+    .wrapper {
+      width: 460px;
+      height: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .wrapper img {
+      position:absolute;
+      left:0;
+      top:0;
+      width: 460px;
+      height: 320px;
+    }
+
+    .wrapper ul {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      margin-left: -70px;
+    }
+    .wrapper ul:after {
+      content:"";
+      display:block;
+      clear:both;
+    }
+    .wrapper ul>li {
+      display:inline-block;
+      width:20px;
+      height:5px;
+      margin:0 5px;
+      border-radius:3px;
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .wrapper .currentli {
+      background-color: #aaa;
+    }
+    .btn {
+      position: absolute;
+      top:50%;
+      margin-top:-15px;
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      background-color:rgba(0,0,0,0.32);
+      text-decoration: none;
+      color:#fff;
+      display: block;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+    }
+    .arrow_left {
+      left: 10px;
+    }
+    .arrow_right {
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrapper">
+  <img src="http://cdn.jirengu.com/book.jirengu.com/img/26.jpg">
+  <img src="http://cdn.jirengu.com/book.jirengu.com/img/25.jpg">
+  <img src="http://cdn.jirengu.com/book.jirengu.com/img/24.jpg">
+  <img src="http://cdn.jirengu.com/book.jirengu.com/img/23.jpg">
+  <img src="http://cdn.jirengu.com/book.jirengu.com/img/21.jpg">
+  <ul>
+    <li class="currentli"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <a class="btn arrow_left">&lt;</a>
+  <a class="btn arrow_right">&gt;</a>
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+
+  var $next = $(".arrow_left"),
+    $pre = $(".arrow_right"),
+    $imgs = $(".wrapper img");
+  var timer;
+  var n = 0;
+  /*用n来记录显示图片的这个数值，第1张为0*/
+
+  /*功能一：箭头控图*/
+  $(".wrapper img").hide().eq(0).show();//只显示第1张图片
+
+  $pre.click(function () {
+    if (n < $imgs.length - 1) {
+      n = n+1;
+      /*小于最后一张图像时在增加*/
+    } else {
+      n = 0;
+      /*回到第1张图片*/
+    }
+    $imgs.fadeOut(500).eq(n).fadeIn(500);
+    /*显示当前数对应的图片*/
+    $(".wrapper li").removeClass("currentli").eq(n).addClass("currentli");
+  })
+
+  $next.click(function () {
+    if (n > 0) {
+      n = n-1;
+      /*图像数大于第1张时减1*/
+    } else {
+      n = $imgs.length - 1;
+    }
+    $imgs.fadeOut(500).eq(n).fadeIn(500);
+    $(".wrapper li").removeClass("currentli").eq(n).addClass("currentli");
+  })
+  /*功能二：圆点控制*/
+  $(".wrapper li").click(function () {
+    n = $(this).index();
+    $imgs.fadeOut(600).eq(n).fadeIn(600);
+    $(".wrapper li").removeClass("currentli").eq(n).addClass("currentli")
+  })
+
+  /*功能三：自动轮播播放*/
+  function autoPlay(){
+    timer = setInterval(function(){
+      if (n < $imgs.length-1) {
+        n = n+1;
+      } else {
+        n = 0;
+      }
+      $imgs.fadeOut(600).eq(n).fadeIn(600);
+      $(".wrapper li").removeClass("currentli").eq(n).addClass("currentli");
+    },2500);
+  }
+  autoPlay();
+
+  /*鼠标悬停时暂停自动轮播 */
+  $(".wrapper img").on("mouseover",function stopAuto() {
+    clearInterval(clock);
+  });
+
+</script>
+
+
+</body>
+</html>
