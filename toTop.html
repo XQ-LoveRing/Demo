@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+
+    <style>
+        .layout {
+
+            height: 300px;
+            border: 1px solid;
+        }
+
+        /*.go-top{*/
+        /*position:fixed;*/
+        /*right:100px;*/
+        /*bottom:100px;*/
+        /*height: 30px;*/
+        /*width: 60px;*/
+        /*border: 1px solid #000;*/
+        /*background-color: skyblue;*/
+
+        /*}*/
+    </style>
+</head>
+
+
+<body>
+<div class="ct">
+    <div class="layout">line1</div>
+    <div class="layout">line2</div>
+    <div class="layout">line3</div>
+    <div class="layout">line4</div>
+    <div class="layout">line5</div>
+    <div class="layout">line6</div>
+    <div class="layout">line7</div>
+    <div class="layout">line8</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+
+
+    function GoTop($ct) {
+        this.$ct = $ct;
+        this.target = $("<div class='go-top'>goTop</div>");
+
+    }
+
+    GoTop.prototype = {
+        constructor: GoTop,
+        createNode: function () {
+            this.target.css({
+                position: 'fixed',
+                right: '100px',
+                bottom: '100px',
+                height: '30px',
+                width: '60px',
+                border: '1px solid #000',
+                display: 'none',
+                backgroundColor: 'skyblue',
+            }),
+                this.$ct.append(this.target);
+
+        },
+        bindEvent: function () {
+            var self = this;
+            self.target.on('click', function () {
+                $("body").animate({scrollTop: 0}, 300);
+            });
+            $(window).scroll(function () {
+                var nowTop = self.$ct.scrollTop();
+                var flag = true;
+                clearTimeout(clock);
+                var clock = setTimeout(function () {
+                    if (nowTop > 200 && flag) {
+                        self.target.fadeIn();
+                        flag=false;
+                    }else{
+                        self.target.fadeOut();
+                        flag=true
+                    }
+                },300)
+            })
+        },
+
+    }
+
+    var a = new GoTop($('body'));
+    a.createNode();
+    a.bindEvent();
+
+
+</script>
+</body>
+</html>
