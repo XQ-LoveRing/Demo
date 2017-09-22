@@ -64,7 +64,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            z-index: 10;
+            z-index: 999;
         }
 
         .logo {
@@ -106,8 +106,8 @@
         header {
             width: 100%;
             height: 700px;
-            background: url("images/header1.jpg");
-            background-size: cover;
+            /*background: url("images/header1.jpg");*/
+            /*background-size: cover;*/
             overflow: hidden;
         }
 
@@ -134,6 +134,15 @@
             background-color: rgba(216, 152, 0, 0.5);
         }
 
+        .header-show{
+            position: absolute;
+            z-index:10;
+            left: 50%;
+            margin-left: -600px;
+            /*border-radius: ;*/
+
+
+        }
         /*团队理念*/
         .iconfont {
             margin-bottom: 50px;
@@ -375,7 +384,7 @@
     #contact {
         padding: 150px;
         background-color: #222;
-        background-image: url(images/hearder3.jpg);
+        background-image: url(src/images/hearder3.jpg);
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -459,8 +468,12 @@
     #footer {
         text-align: center;
         padding: 30px 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         line-height: 40px;
     }
 
@@ -490,3 +503,132 @@
         margin-left: 10px;
     }
 
+.carousel {
+    position: relative;
+    /*left:0;*/
+    /*top:0;*/
+    overflow: hidden;
+}
+
+.carousel ul,
+.carousel li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.carousel .img-ct {
+    position: absolute;
+}
+
+.carousel .img-ct > li {
+    float: left;
+}
+
+.carousel .arrow {
+    position: absolute;
+    top: 50%;
+    /*margin-top: -15px;*/
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size:25px;
+}
+
+.carousel .arrow:hover {
+    opacity: 0.8;
+}
+
+.carousel .pre {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+.carousel .bullet {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    font-size: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+.carousel .bullet > li {
+    display: inline-block;
+    width: 50px;
+    height: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.carousel .bullet > li.active {
+    background-color: #ccc;
+}
+ .wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #pic-ct{
+            position: relative;
+            left: 100px;
+        }
+        #pic-ct .item{
+            position: absolute;
+            padding: 0 0 10px 0;
+            width: 280px;
+            margin: 10px;
+            border: 1px solid #DFDFDF;
+            background: #FFF;
+            opacity: 0;
+            transition: all .8s;
+        }
+        #pic-ct .item img{
+            margin: 10px;
+            width: 260px;
+        }
+        #pic-ct .item .header{
+            height: 25px;
+            margin: 0 12px;
+            border-bottom: 1px solid #DBDBDB;
+        }
+        #pic-ct .desp{
+            font-size: 12px;
+            line-height: 1.8;
+            margin: 10px 15px 0;
+            color: #777371;
+        }
+        #load{
+            visibility: hidden;
+            height: 20px;
+        }
+        .hide{
+            display: none;
+        }
+         .load-more {
+            margin: 0 auto;
+            width: 100px;
+            height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #ffc700;
+            cursor: pointer;
+        }

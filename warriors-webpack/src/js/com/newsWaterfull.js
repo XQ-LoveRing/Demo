@@ -1,5 +1,5 @@
-//AMD写法
-define(['jquery'],function($){
+
+    var $=require('../lib/jquery-2.1.1.min');
     var ajaxNews = function () {
         function NewsWaterfull($ct) {
             console.log(123)
@@ -122,8 +122,6 @@ define(['jquery'],function($){
         }
     }();
 
-        return ajaxNews;
-})
-
+  module.exports=ajaxNews;
 
     // ajaxNews.init($('.ct-waterfall'))

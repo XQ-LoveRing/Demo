@@ -1,8 +1,7 @@
-//CMD 写法
-define(function (require, exports, module)
-{
-    var $ = require('jquery');
-    var Carousel = function () {
+
+    var $ = require('../lib/jquery-2.1.1.min');
+ 
+    var carousel = function () {
         function _Carousel($ct) {
             this.$ct = $ct;
             this.init();
@@ -148,8 +147,6 @@ define(function (require, exports, module)
         }
 
     }()
-    return Carousel;
-});
 
+    module.exports=carousel;
 
-// Carousel.init($('.carousel'))

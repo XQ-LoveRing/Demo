@@ -58,24 +58,24 @@
 <script type="text/javascript">
 
 
-    var waterFall=(function () {
-        function init() {
-            waterFull();
+    var waterFall = (function () {
+        function init($ct, $item) {
+            waterFull($ct, $item);
             $(window).resize(function () {
-                waterFull();
+                waterFull($ct,$item);
             })
 
 
-            function waterFull() {
+            function waterFull($ct, $item) {
                 //取得列数
-                var colWidth = parseInt($('.content').width() / $('.item').width());
-                //   console.log(colWidth)
+                var colWidth = parseInt($ct.width() / $item.width());
+//                   console.log(colWidth)
                 var itemArr = [];
                 for (i = 0; i < colWidth; i++) {
                     itemArr[i] = 0
                 }
-
-                $('.item').each(function () {
+//
+                $item.each(function () {
 //        取得数组中的最小值以及相应的位置
                     var minValue = Math.min.apply(null, itemArr);
                     var minIndex = itemArr.indexOf(minValue);
@@ -90,14 +90,19 @@
 
                 })
             }
+
         }
 
         return {
-            init:init
+            init: init
         }
     })()
 
-waterFall.init();
+    var $content = $('.content');
+    var $item = $('.item');
+
+    waterFall.init($content, $item);
+    //    console.log(waterFall.init)
 
 </script>
 </body>
