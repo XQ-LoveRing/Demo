@@ -1,4 +1,5 @@
 
+    var $=require('../lib/jquery-2.1.1.min');
     var ajaxNews = function () {
         function NewsWaterfull($ct) {
             console.log(123)
@@ -121,5 +122,6 @@
         }
     }();
 
+  module.exports=ajaxNews;
 
-    ajaxNews.init($('.ct-waterfall'))
+    // ajaxNews.init($('.ct-waterfall'))

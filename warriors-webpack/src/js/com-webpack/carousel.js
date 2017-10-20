@@ -1,4 +1,7 @@
- var carousel = function () {
+
+    var $ = require('../lib/jquery-2.1.1.min');
+ 
+    var carousel = function () {
         function _Carousel($ct) {
             this.$ct = $ct;
             this.init();
@@ -145,5 +148,5 @@
 
     }()
 
-    carousel.init($('.carousel'));
+    module.exports=carousel;
 

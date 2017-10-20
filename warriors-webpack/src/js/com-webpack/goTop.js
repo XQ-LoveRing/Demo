@@ -1,3 +1,4 @@
+var $ = require('../lib/jquery-2.1.1.min');
 
 var goTop = function () {
             function GoTop($ct) {
@@ -27,24 +28,21 @@ var goTop = function () {
                         this.$ct.append(this.target);
     
                 },
-                bindEvent: function () {          
+                bindEvent: function () {
                     var self = this;
                     self.target.on('click', function () {
-                        $("html").animate({scrollTop: 0}, 300);
                         $("body").animate({scrollTop: 0}, 300);
                     });
                     $(window).scroll(function () {
-                        // var nowTop = self.$ct.scrollTop();
-                        // console.log($('html'))
-                        var nowTop=self.$ct.scrollTop()||document.documentElement.scrollTop;
+                        var nowTop = self.$ct.scrollTop();
                         var flag = true;
                         clearTimeout(clock);
                         var clock = setTimeout(function () {
-                            if (nowTop > 300 && flag) {
-                                self.target.fadeIn();                               
+                            if (nowTop > 200 && flag) {
+                                self.target.fadeIn();
                                 flag = false;
                             } else {
-                                self.target.fadeOut();                          
+                                self.target.fadeOut();
                                 flag = true
                             }
                         }, 300)
@@ -60,6 +58,8 @@ var goTop = function () {
             }
         }()
 
-        goTop.init($("body"));
 
+module.exports = goTop;
+
+// goTop.init($("body"))
 

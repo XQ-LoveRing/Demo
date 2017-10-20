@@ -1,16 +1,13 @@
 
     var ajaxNews = function () {
         function NewsWaterfull($ct) {
-            console.log(123)
-            this.$ct = $ct;
-            this.item = $ct.find('.item');
-            this.picCt = $ct.find('#pic-ct');
-            this.init();
-            this.bind();
-            this.render();
-            console.log(123)
-
-        }
+            var $ct = $ct;
+            var item = $ct.find('.item');
+            var picCt = $ct.find('#pic-ct');
+            init();
+            bind();
+            render();
+        }.bind(this);
 
         NewsWaterfull.prototype.init = function () {
             this.curPage = 1;
